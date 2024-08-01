@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .result {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        .probability {
+            font-size: 18px;
+            margin: 20px 0;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .risk {
+        font-weight: bold;
+        color: red;
+        }
+        .no-risk {
+        font-weight: bold;
+        color: green; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Prediction Results</h1>
+    <div class="result">
+        {% if prediction == 1 %}
+        The employee is likely to <span class="risk">LEAVE</span> the company.
+        {% else %}
+        The employee is likely to <span class="no-risk">STAY</span> with the company.
+        {% endif %}
+    </div>
+    <div class="probability">
+        {% if prediction == 1 %}
+        Probability of leaving: <span class="risk">{{ "%.2f"|format(probability * 100) }}%</span>
+        {% else %}
+        Probability of leaving: <span class="no-risk">{{ "%.2f"|format(probability * 100) }}%</span>
+        {% endif %}
+    </div>
+    <a href="/" class="back-link">Back to Form</a>
+</body>
+</html>

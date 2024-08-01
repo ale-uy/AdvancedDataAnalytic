@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Data Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 5px;
+            margin-top: 5px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Employee Data Form</h1>
+    <form method="POST">
+        <label for="satisfaction_level">Satisfaction Level:</label>
+        <input type="number" id="satisfaction_level" name="satisfaction_level" min="0.00" max="1.00" step="0.01" required>
+
+        <label for="last_evaluation">Last Evaluation:</label>
+        <input type="number" id="last_evaluation" name="last_evaluation" min="0.00" max="1.00" step="0.01" required>
+
+        <label for="number_project">Number of Projects:</label>
+        <input type="number" id="number_project" name="number_project" min="0" required>
+
+        <label for="average_monthly_hours">Average Monthly Hours:</label>
+        <input type="number" id="average_monthly_hours" name="average_monthly_hours" min="0" required>
+
+        <label for="time_spend_company">Time Spent at the Company (years):</label>
+        <input type="number" id="time_spend_company" name="time_spend_company" min="0" required>
+
+        <label for="work_accident_1">Work Accident:</label>
+        <select id="work_accident_1" name="work_accident_1" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+
+        <label for="promotion_last_5years_1">Promotion in Last 5 Years:</label>
+        <select id="promotion_last_5years_1" name="promotion_last_5years_1" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+
+        <label for="department">Department:</label>
+        <select id="department" name="department" required>
+            <option value="RandD">R&D</option>
+            <option value="accounting">Accounting</option>
+            <option value="hr">HR</option>
+            <option value="management">Management</option>
+            <option value="marketing">Marketing</option>
+            <option value="product_mng">Product Management</option>
+            <option value="sales">Sales</option>
+            <option value="support">Support</option>
+            <option value="technical">Technical</option>
+        </select>
+
+        <label for="salary">Salary:</label>
+        <select id="salary" name="salary" required>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+        </select>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
